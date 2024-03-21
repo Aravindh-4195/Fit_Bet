@@ -6,6 +6,8 @@ import GymDash from "./gymCenter/gymCenterDash";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Gym from "./gymCenter/gymCenter";
 import Main1 from "./home/components/main";
+import { Login } from "./authComponents/login";
+import Register from "./authComponents/Register";
 // import Review from "./review";
 function Main() {
   return (
@@ -18,6 +20,8 @@ function Main() {
         <Route path="/gym/gymCenter" element={<Gym />}></Route>
         {/* <Route path="/gym/review" element={<Review />}></Route> */}
         <Route path="/" element={<Main1 />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

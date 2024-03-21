@@ -1,5 +1,7 @@
 import React from "react";
 import "../styles/NavBar.css";
+import { FaRegCircleUser } from "react-icons/fa6";
+// import
 function NavBar() {
   return (
     <div id="nav">
@@ -18,6 +20,9 @@ function NavBar() {
       </a>
       <a href="/register" className="nav_item">
         Register
+      </a>
+      <a href="/register" className="nav_item account">
+        <FaRegCircleUser />
       </a>
     </div>
   );

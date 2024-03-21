@@ -9,7 +9,7 @@ function Home() {
         <h2 className="home_h2">Build Your Body </h2>
         <h2 className="home_h2">&</h2>
         <h1 className="home_h1">Shape Yourself</h1>
-        <a href="">
+        <a href="/login">
           <button id="home_button">Get Started</button>
         </a>
       </div>

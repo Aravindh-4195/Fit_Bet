@@ -46,11 +46,11 @@
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  color: white;
+  color: black;
 }
 
 .footerlinksdiv a {
-  color: rgb(175, 175, 179);
+  color: rgba(0, 0, 0, 0.718);
   text-decoration: none;
 }
 
@@ -89,7 +89,7 @@
   font-size: 13px;
   line-height: 15px;
   margin-left: 2rem;
-  color: white;
+  color: black;
   font-weight: 600;
   text-decoration: none;
 }

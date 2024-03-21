@@ -4,6 +4,7 @@ const multer = require("multer");
 const app = express();
 const { accounts } = require("./mongo");
 const { gymAccounts } = require("./mongo");
+const { userdetails } = require("./mongo");
 // const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,5 +43,38 @@ app.get("/gym/getGyms", async (req, res) => {
     res.send({ data: data });
   } catch (e) {
     console.log(e);
+  }
+});
+
+app.post("/gym/register", upload.single("photo"), async (req, res) => {
+  const data = req.body;
+  data["photo"] = req.file.filename;
+  try {
+    await userdetails.insertMany([data]);
+    res.json("ok");
+  } catch (e) {
+    if (e.code === 11000) {
+      // Duplicate key error, handle accordingly
+      // console.log("Duplicate key error:", e.keyValue);
+      res.json("Duplicate key error");
+    } else {
+      // Other validation errors
+      // console.error(e);
+      res.status(400).json({ error: "Validation error" });
+    }
+  }
+});
+
+app.post("/login", async (req, res) => {
+  console.log(req.body);
+  // const { phone, password } = req.body;
+  const check = await userdetails.findOne({
+    phone: req.body.phone,
+    password: req.body.password,
+  });
+  if (check) {
+    res.json("data found");
+  } else {
+    res.json("data not found");
   }
 });

@@ -19,6 +19,7 @@ const schema = new mongoose.Schema({
   },
 });
 
+// gym center schema
 const gymSchema = new mongoose.Schema({
   centerName: {
     type: String,
@@ -65,8 +66,62 @@ const gymSchema = new mongoose.Schema({
     require: true,
   },
 });
+
+// user Details Schema
+
+const userDetails = new mongoose.Schema({
+  name: {
+    type: String,
+    require: true,
+  },
+  email: {
+    type: String,
+    require: true,
+    unique: true,
+  },
+  phone: {
+    type: Number,
+    require: true,
+    unique: true,
+  },
+  gender: {
+    type: String,
+    require: true,
+  },
+  password: {
+    type: String,
+    require: true,
+  },
+  flat_no: {
+    type: String,
+    require: true,
+  },
+  landmark: {
+    type: String,
+    require: true,
+  },
+  street: {
+    type: String,
+    require: true,
+  },
+  city: {
+    type: String,
+    require: true,
+  },
+  navigate: {
+    type: String,
+    require: true,
+  },
+  photo: {
+    type: String,
+    require: true,
+  },
+});
 const accounts = mongoose.model("accounts", schema);
 module.exports = { accounts };
 
 const gymAccounts = mongoose.model("gymAccounts", gymSchema);
 module.exports = { gymAccounts };
+
+const userdetails = mongoose.model("userdetails", userDetails);
+module.exports = { userdetails };

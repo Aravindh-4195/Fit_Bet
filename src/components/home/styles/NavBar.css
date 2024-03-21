@@ -30,6 +30,11 @@
   justify-content: center;
   border-radius: 5px;
 }
+.account {
+  height: 50%;
+  width: 3%;
+  font-size: 2vw;
+}
 /* #navBar {
   height: 10vh;
   display: flex;
