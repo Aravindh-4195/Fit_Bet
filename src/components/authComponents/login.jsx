@@ -32,7 +32,8 @@ export const Login = () => {
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
-        <h2>Login</h2>
+        <fieldset className="login_fieldset">
+        <legend className="login_legend">Login</legend>
         <div className="input-group">
           <label htmlFor="phone">phone number:</label>
           <input
@@ -41,6 +42,7 @@ export const Login = () => {
             value={phone}
             onChange={(e) => setUsername(e.target.value)}
             required
+            placeholder="Enter your phone number"
           />
         </div>
         <div className="input-group">
@@ -51,15 +53,19 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            placeholder="Enter Password"
           />
         </div>
-        <button type="submit">Login</button>
-        <p> Don't have an Account</p>
+        <button type="submit" className="button-secondary">Login</button>
+        </fieldset>
+        <fieldset className="login_fieldset">
+        <legend className="login_legend2"> Don't have an Account</legend>
         <a href="/register">
           <button type="button" className="button-secondary">
             Register Here
           </button>
         </a>
+        </fieldset>
       </form>
     </div>
   );
