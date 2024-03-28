@@ -3,27 +3,23 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .login-form {
-  
-  width:30vw;
+  width: 30vw;
   padding: 20px;
   border-radius: 8px;
- 
 }
-.login_legend{
- 
+.login_legend {
   font-size: 2rem;
 }
-.login_legend2{
- 
+.login_legend2 {
   font-size: 1.3rem;
 }
-.login_fieldset{
- 
+.login_fieldset {
   border-color: rgba(251, 228, 17, 255);
-  width:400px;
+  width: 400px;
 }
 .login-form h2 {
   margin-bottom: 20px;
@@ -53,8 +49,8 @@
   width: 100%;
   padding: 10px;
   font-size: 18px;
-  background-color:rgba(251, 228, 17, 255);
-  color:black;
+  background-color: rgba(251, 228, 17, 255);
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -62,7 +58,7 @@
 }
 
 .button-secondary:hover {
-  background-color: black ;
+  background-color: black;
   border: 1px solid rgba(251, 228, 17, 255);
-  color:rgba(251, 228, 17, 255);
+  color: rgba(251, 228, 17, 255);
 }

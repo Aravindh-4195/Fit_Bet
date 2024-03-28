@@ -1,6 +1,7 @@
 import React from "react";
 // import "../assets/hero_image.png"\
 import "../styles/home.css";
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <div id="main">
@@ -9,9 +10,9 @@ function Home() {
         <h2 className="home_h2">Build Your Body </h2>
         <h2 className="home_h2">&</h2>
         <h1 className="home_h1">Shape Yourself</h1>
-        <a href="/login">
+        <Link to="/login">
           <button id="home_button">Get Started</button>
-        </a>
+        </Link>
       </div>
       <div className="image"></div>
     </div>

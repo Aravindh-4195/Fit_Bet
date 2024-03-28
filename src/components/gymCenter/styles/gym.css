@@ -29,8 +29,8 @@ body {
   padding-left: 5vw;
   color: rgb(222, 220, 220);
 }
-#gym_img {
-  height: 100%;
+#gymImg {
+  height: 80%;
   width: 100%;
   border-radius: 15px;
 }
@@ -55,7 +55,7 @@ body {
 }
 #link {
   text-decoration: none;
-  color: rgba(255, 166, 0, 0.668);
+  color: rgba(251, 228, 17, 255);
 }
 #gym_timing {
   border-bottom: solid 1px rgb(50, 49, 49);
@@ -71,12 +71,23 @@ body {
   cursor: pointer;
 }
 .contact_item h3 {
-  color: rgba(255, 166, 0, 0.668);
+  color: rgba(251, 228, 17, 255);
 }
 .con_item {
   width: 75%;
   color: grey;
   font-weight: bold;
+}
+.gymCenterBtn {
+  background-color: rgba(251, 228, 17, 255);
+  text-decoration: none;
+  width: 100%;
+}
+
+.gymCenterBtn:hover {
+  background-color: black;
+  border: 2px solid rgba(251, 228, 17, 255);
+  color: rgba(251, 228, 17, 255);
 }
 @media screen and (max-width: 800px) {
   .gym_main {

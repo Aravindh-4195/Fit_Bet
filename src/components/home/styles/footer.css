@@ -11,6 +11,9 @@
   height: 90%;
   background-color: aliceblue;
 } */
+#footer {
+  z-index: 1;
+}
 .footer-padding {
   padding: 4rem 4rem;
 }

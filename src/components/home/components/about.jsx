@@ -3,7 +3,7 @@ import "../styles/about.css";
 function About() {
   return (
     <div id="about">
-      <div className="main_about">
+      <div id="main_about">
         {/* <section className="container2"> */}
         {/* <h2 className="ourclass">About</h2> */}
         <div className="about_head">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +15,11 @@ export const Login = () => {
         .post("http://localhost:8000/login", formdata)
         .then((res) => {
           if (res.data === "data found") {
-            history("/");
-          } else if (res.data === "data not found") {
-            alert("entered email and password doesn't match");
+            history("/gym/getGyms", { state: { user_id: phone } });
+          } else if (res.data === "combo false") {
+            alert("entered phone and password doesn't match");
+          } else {
+            alert("entered phone no doesnot exist.please signup");
           }
         })
         .catch((e) => {
@@ -33,38 +35,40 @@ export const Login = () => {
     <div className="login-container">
       <form className="login-form" onSubmit={handleLogin}>
         <fieldset className="login_fieldset">
-        <legend className="login_legend">Login</legend>
-        <div className="input-group">
-          <label htmlFor="phone">phone number:</label>
-          <input
-            type="tel"
-            id="phone"
-            value={phone}
-            onChange={(e) => setUsername(e.target.value)}
-            required
-            placeholder="Enter your phone number"
-          />
-        </div>
-        <div className="input-group">
-          <label htmlFor="password">Password:</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            placeholder="Enter Password"
-          />
-        </div>
-        <button type="submit" className="button-secondary">Login</button>
+          <legend className="login_legend">Login</legend>
+          <div className="input-group">
+            <label htmlFor="phone">Phone number:</label>
+            <input
+              type="tel"
+              id="phone"
+              value={phone}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              placeholder="Enter your phone number"
+            />
+          </div>
+          <div className="input-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+              placeholder="Enter Password"
+            />
+          </div>
+          <button type="submit" className="button-secondary">
+            Login
+          </button>
         </fieldset>
         <fieldset className="login_fieldset">
-        <legend className="login_legend2"> Don't have an Account</legend>
-        <a href="/register">
-          <button type="button" className="button-secondary">
-            Register Here
-          </button>
-        </a>
+          <legend className="login_legend2"> Don't have an Account</legend>
+          <a href="/register">
+            <button type="button" className="button-secondary">
+              Register Here
+            </button>
+          </a>
         </fieldset>
       </form>
     </div>

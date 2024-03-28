@@ -1,5 +1,6 @@
 import React from "react";
 // import Render from "./Render";
+import "../styles/main.css";
 import App from "./App";
 import GymForm from "./gymCenter/gymCenterUpload";
 import GymDash from "./gymCenter/gymCenterDash";
@@ -8,6 +9,12 @@ import Gym from "./gymCenter/gymCenter";
 import Main1 from "./home/components/main";
 import { Login } from "./authComponents/login";
 import Register from "./authComponents/Register";
+import Trainer from "./trainer/trainer";
+import TrainerDash from "./trainer/trainerIndiviDash";
+import TrainerForm from "./trainer/trainerRegistration";
+import NavBarUser from "../userDashboard/navBar";
+import UserAccount from "../userDashboard/userAccount";
+import Dashboard from "./dasboard";
 // import Review from "./review";
 function Main() {
   return (
@@ -22,6 +29,26 @@ function Main() {
         <Route path="/" element={<Main1 />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+
+        {/* trainer tags */}
+        <Route path="/trainer/trainer" element={<Trainer />} />
+        <Route path="/trainer/getTrainers" element={<TrainerDash />} />
+        <Route path="/trainer/trainerReg" element={<TrainerForm />} />
+
+        {/* user dashboard */}
+        <Route
+          path="/user"
+          element={
+            <div className="userDash">
+              <div className="userNav">
+                <NavBarUser />
+              </div>
+              <div className="userPart">
+                <UserAccount />
+              </div>
+            </div>
+          }
+        ></Route>
       </Routes>
     </Router>
   );

@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./styles/Register.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
+  const history = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -40,6 +42,7 @@ function Register() {
             // alert(res.data);
             if (res.data === "ok") {
               alert("succesfully inserted");
+              history("/login");
             } else if (res.data === "Duplicate key error") {
               alert("email or phone Number already exist");
             } else {

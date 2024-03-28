@@ -20,7 +20,7 @@ import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <div id="footer">
       <div className="footer coll_footer footer-padding">
         <div className="footer-links">
           <div className="footerlinksdiv">

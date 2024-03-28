@@ -2,7 +2,7 @@ import React from "react";
 import NavBar from "./NavBar";
 import Home from "./home";
 import About from "./about";
-import Gym from "./Gym";
+// import Gym from "./Gym";
 // import Yoga from "./yoga";
 // import Testimonials from "./testimonials";
 import Review from "./review";
@@ -11,6 +11,7 @@ import Footer from "./footer";
 import ChooseUs from "./chooseUs";
 import BMI from "./bmi";
 import "../styles/main.css";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 function Main1() {
   return (
     <div
@@ -33,6 +34,7 @@ function Main1() {
         }}
       >
         <NavBar />
+        {/* <div style={{ paddingTop: "10vh" }}></div> */}
         <Home />
         {/* <Gym /> */}
         {/* <Panner /> */}
@@ -44,6 +46,17 @@ function Main1() {
         <Review />
         <BMI />
         <Footer />
+        <div>
+          <i
+            class="fa-solid fa-circle-up"
+            style={{
+              color: "white",
+              position: "fixed",
+              zIndex: "2",
+              fontSize: "10vw",
+            }}
+          ></i>
+        </div>
       </div>
     </div>
   );

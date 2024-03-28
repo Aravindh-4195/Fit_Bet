@@ -69,6 +69,30 @@ const gymSchema = new mongoose.Schema({
 
 // user Details Schema
 
+// registered  Users Schema
+const registered = new mongoose.Schema({
+  user_id: {
+    type: Number,
+    required: true,
+  },
+  product_id: {
+    type: Number,
+    required: true,
+  },
+  time: {
+    type: String,
+    required: true,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: Boolean,
+    required: true,
+  },
+});
+
 const userDetails = new mongoose.Schema({
   name: {
     type: String,
@@ -117,11 +141,81 @@ const userDetails = new mongoose.Schema({
     require: true,
   },
 });
+
+const trainerAccounts = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  phone: {
+    type: Number,
+    required: true,
+    unique: true,
+  },
+  age: {
+    type: Number,
+    required: true,
+  },
+  gender: {
+    type: String,
+    required: true,
+  },
+  city: {
+    type: String,
+    required: true,
+  },
+  yofe: {
+    type: String,
+    required: true,
+  },
+  // certification: {
+  //   type: String,
+  //   required: true,
+  // },
+  rep: {
+    type: String,
+    required: true,
+  },
+  specilization: {
+    type: [String],
+    required: true,
+  },
+  timings: {
+    type: String,
+    required: true,
+  },
+  train_to: {
+    type: [String],
+    required: true,
+  },
+  photo: {
+    type: String,
+    required: true,
+  },
+});
 const accounts = mongoose.model("accounts", schema);
 module.exports = { accounts };
 
-const gymAccounts = mongoose.model("gymAccounts", gymSchema);
-module.exports = { gymAccounts };
+// const gymAccounts = mongoose.model("gymAccounts", gymSchema);
+// module.exports = { gymAccounts };
 
 const userdetails = mongoose.model("userdetails", userDetails);
-module.exports = { userdetails };
+// module.exports = { userdetails };
+
+const gymProfiles = mongoose.model("gymProfiles", gymSchema);
+// module.exports = { gymProfiles };
+
+const trainerDetails = mongoose.model("trainerDetails", trainerAccounts);
+// module.exports = { trainerDetails };
+
+// const userdetails = mongoose.model("userdetails", userDetails);
+// const gymProfiles = mongoose.model("gymProfiles", gymSchema);
+// const trainerDetails = mongoose.model("trainerDetails", trainerAccounts);
+const register = mongoose.model("register", registered);
+
+module.exports = { userdetails, gymProfiles, trainerDetails, register };

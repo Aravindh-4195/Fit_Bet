@@ -24,11 +24,16 @@
 .span_about {
   color: rgb(223, 103, 55);
 }
-#about {
-  height: 96%;
+#main_about {
   background-color: rgba(251, 228, 17, 255);
+  height: 96%;
+}
+#about {
+  height: 98%;
+
   border-radius: 5px;
-  margin: 15px 0;
+  /* margin: 15px 0; */
   font-family: Arial, Helvetica, sans-serif;
+  /* padding-top: 10vh; */
   /* width: 103%; */
 }
