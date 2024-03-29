@@ -1,0 +1,55 @@
+.trainer_main{
+    width: 100%;
+    height:80vh;
+  }
+.trainer_main{
+    display: flex;
+    flex-direction: row;
+    gap:50px;
+}
+.trainer_header{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.trainer_h2{
+  color:rgb(151, 203, 235);
+  font-size: 2.8rem;
+  text-align: left;
+}
+.trainer_span{
+    color:rgb(151, 223, 180);
+    font-size: 4rem;
+}
+.trainer_p{
+
+    color:rgb(151, 203, 235);
+    font-size: 1.5rem;
+    text-align: left;
+    font-weight: bold;
+    max-width: 90%;
+    line-height: 1.5rem;
+}
+.trainer_image {
+    height:60rem;
+    width: 60rem;
+    background-image: url("../assets/1234.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.trainer_btn{
+    background-color:rgb(151, 203, 235);
+    text-align: center;
+  }
+  .trainer_btn:hover{
+    background-color: black;
+    border:1px solid rgb(151, 203, 235) ;
+    color:rgb(151, 203, 235);
+  }
+  .trainer_button{
+    margin-top: 50px;
+    width:80%;
+    display: flex;
+  }

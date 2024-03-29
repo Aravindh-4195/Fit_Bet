@@ -1,0 +1,42 @@
+#presence{
+    width: 100%;
+    height:100vh;
+    
+  }
+.presence_allmain{
+    display: flex;
+    gap:20px;
+    flex-direction: column;
+    background-color: rgb(151, 203, 235);
+    width:96.5%;
+    height:80vh;
+
+    
+}
+.presence_h1{
+    font-size: 3rem;
+    
+}
+.presence_span{
+    color:rgb(201, 247, 212);
+    font-size: 5rem;
+  }
+
+.presence_blocks{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap:30%;
+}
+.presence_block1{
+    line-height: 0rem;
+}
+.india_h1{
+    color:rgb(201, 247, 212);
+    font-size:4rem;
+}
+.presence_p{
+    color:black;
+    font-size: 1.6rem;
+    font-weight: bold;
+}

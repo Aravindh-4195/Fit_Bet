@@ -189,10 +189,35 @@ app.post("/user", async (req, res) => {
 
 app.post("/user/currentSubscriptions", async (req, res) => {
   // console.log(req.body);
-  const get_data_reg = { ...req.body, status: true };
+  const { getReg } = req.body;
+  var respond = [];
+  // console.log(req.body);
+  // const { productId } = req.body;
+
+  // console.log(getReg);
   try {
-    const data = await register.find(get_data_reg);
-    res.send({ data: data });
+    if (getReg) {
+      const get_data = { user_id: req.body.user_id, status: true };
+      // console.log(get_data);
+      const data = await register.find(get_data);
+      // console.log("data", data);
+      res.send({ data: data });
+    } else {
+      // console.log(req.body.product_id);
+      const productIds = req.body.product_id;
+      const length = productIds.length;
+      productIds.map(async (data, index) => {
+        // console.log(data);
+        const get_data = await gymProfiles.findOne({ phone: data });
+        // console.log(get_data);
+        respond = [...respond, get_data];
+        if (index === length - 1) {
+          // console.log(respond);
+          res.send({ data: respond });
+        }
+      });
+      // console.log("hello", respond);
+    }
   } catch (e) {
     console.log(e);
   }

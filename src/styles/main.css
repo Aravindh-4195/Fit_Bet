@@ -18,7 +18,10 @@
   /* background-color: blue; */
   justify-content: flex-end;
 }
-
+.contact {
+  height: 50vh;
+  margin: 10vh;
+}
 .getItems {
   width: 100vw;
   display: flex;

@@ -1,0 +1,42 @@
+.own_main{
+    display: flex;
+    flex-direction: row;
+    gap:5%;
+}
+.own_h2{
+  color:rgb(151, 203, 235);
+  font-size: 3.5rem;
+  text-align: left;
+}
+.own_span{
+    color:rgb(151, 223, 180);
+    font-size: 5.5rem;
+}
+.own_p{
+    color:rgb(151, 203, 235);
+    font-size: 1.4rem;
+    text-align: left;
+    font-weight: bold;
+}
+.own_image {
+    height:600px;
+    width: 600px;
+    background-image: url("../assets/own.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+}
+.own_btn{
+    background-color:rgb(151, 203, 235);
+    text-align: center;
+  }
+  .own_btn:hover{
+    background-color: black;
+    border:1px solid rgb(151, 203, 235) ;
+    color:rgb(151, 203, 235);
+  }
+  .own_button{
+    margin-top: 30px;
+    width:70%;
+    display: flex;
+  }

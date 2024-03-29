@@ -18,7 +18,7 @@ function NavBarUser() {
       <a href="#orders" className="navUserItem">
         Order History
       </a>
-      <a href="#services" className="navUserItem">
+      <a href="/user/contact" className="navUserItem">
         Customer Care
       </a>
       <a href="/" className="navUserItem">

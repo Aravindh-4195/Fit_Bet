@@ -16,6 +16,8 @@ import NavBarUser from "../userDashboard/navBar";
 import UserAccount from "../userDashboard/userAccount";
 import Dashboard from "./dasboard";
 import Subscription from "../userDashboard/currentSub";
+import Contact from "../userDashboard/contact";
+import BussinessMain from "../bussinessHome/components/bussiness_main";
 // import Review from "./review";
 function Main() {
   return (
@@ -63,6 +65,22 @@ function Main() {
             </div>
           }
         ></Route>
+        <Route
+          path="/user/contact"
+          element={
+            <div>
+              <div className="userDash">
+                <div className="userNav">
+                  <NavBarUser />
+                </div>
+                <div className="userPart contact">
+                  <Contact />
+                </div>
+              </div>
+            </div>
+          }
+        ></Route>
+        <Route path="/bussiness" element={<BussinessMain />} />
       </Routes>
     </Router>
   );
