@@ -1,0 +1,9 @@
+.orderList {
+  /* width: 70vw; */
+  height: 10vh;
+  width: 60vw;
+  background-color: red;
+}
+#title {
+  color: white;
+}

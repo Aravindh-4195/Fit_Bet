@@ -20,15 +20,21 @@ function UserAccount() {
     confirmPassword: "",
     photo: null,
   });
+  const [id, setId] = useState(localStorage.getItem("user_id") || "");
   const history = useNavigate();
   const location = useLocation();
   const user_id = location.state?.user_id;
   // console.log(user_id);
   const user = { phone: Number(user_id), output: true };
   useEffect(() => {
+    localStorage.setItem("user_id", id);
+    console.log("localStorage", localStorage.getItem("user_id"));
     handleOnload();
   }, []);
+
   const handleOnload = async () => {
+    console.log("user", user_id);
+    setId(user_id);
     if (user_id === undefined) {
       history("/login");
     }

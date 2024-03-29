@@ -15,6 +15,7 @@ import TrainerForm from "./trainer/trainerRegistration";
 import NavBarUser from "../userDashboard/navBar";
 import UserAccount from "../userDashboard/userAccount";
 import Dashboard from "./dasboard";
+import Subscription from "../userDashboard/currentSub";
 // import Review from "./review";
 function Main() {
   return (
@@ -45,6 +46,19 @@ function Main() {
               </div>
               <div className="userPart">
                 <UserAccount />
+              </div>
+            </div>
+          }
+        ></Route>
+        <Route
+          path="/user/currentSubscriptions"
+          element={
+            <div className="userDash">
+              <div className="userNav">
+                <NavBarUser />
+              </div>
+              <div className="userPart">
+                <Subscription />
               </div>
             </div>
           }

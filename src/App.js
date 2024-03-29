@@ -186,3 +186,14 @@ app.post("/user", async (req, res) => {
     console.log(e);
   }
 });
+
+app.post("/user/currentSubscriptions", async (req, res) => {
+  // console.log(req.body);
+  const get_data_reg = { ...req.body, status: true };
+  try {
+    const data = await register.find(get_data_reg);
+    res.send({ data: data });
+  } catch (e) {
+    console.log(e);
+  }
+});

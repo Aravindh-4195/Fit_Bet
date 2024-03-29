@@ -12,7 +12,7 @@ function NavBarUser() {
       <a href="/user" className="navUserItem">
         Account Details
       </a>
-      <a href="#current_sub" className="navUserItem">
+      <a href="/user/currentSubscriptions" className="navUserItem">
         Current Subscriptions
       </a>
       <a href="#orders" className="navUserItem">
