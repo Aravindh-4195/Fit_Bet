@@ -49,6 +49,8 @@ body {
 }
 #item1 {
   width: 75%;
+  /* color: rgb(65, 65, 65); */
+  /* color: #292929; */
 }
 #subadd {
   color: grey;
@@ -61,6 +63,14 @@ body {
   border-bottom: solid 1px rgb(50, 49, 49);
   cursor: pointer;
 }
+#commentSection {
+  max-height: 300px;
+  overflow-y: auto;
+}
+tr p {
+  margin: 0;
+}
+
 .gym_contact {
   display: flex;
   align-items: flex-start;

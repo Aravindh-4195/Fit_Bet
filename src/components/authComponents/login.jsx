@@ -15,7 +15,10 @@ export const Login = () => {
         .post("http://localhost:8000/login", formdata)
         .then((res) => {
           if (res.data === "data found") {
-            history("/gym/getGyms", { state: { user_id: phone } });
+            localStorage.setItem("user_id", phone);
+            history("/gym/getGyms");
+
+            // console.log(localStorage.getItem("profile"));
           } else if (res.data === "combo false") {
             alert("entered phone and password doesn't match");
           } else {

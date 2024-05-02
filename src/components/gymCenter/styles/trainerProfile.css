@@ -9,7 +9,7 @@ input {
   font-family: monospace;
   /* max-width: 800px; */
   /* margin: 0 auto; */
-  color: gold;
+  color: rgb(151, 203, 235);
   background-color: black;
   width: 88.9vw;
   padding: 5vw;
@@ -32,7 +32,7 @@ fieldset {
   padding: 20px;
   margin-bottom: 20px;
   width: 50vw;
-  color: gold;
+  color: rgb(151, 203, 235);
 }
 
 legend {
@@ -40,7 +40,7 @@ legend {
   font-weight: bold;
   margin-bottom: 30px;
   text-align: left;
-  color: gold;
+  color: rgb(151, 203, 235);
 }
 
 .row {
@@ -91,7 +91,7 @@ textarea {
 
 button {
   font-family: monospace;
-  background-color: rgba(255, 217, 0, 0.749);
+  background-color: rgb(151, 203, 235);
   color: black;
   font-size: larger;
   font-weight: bolder;

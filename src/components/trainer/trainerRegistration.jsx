@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles/trainerReg.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function TrainerForm() {
   const [formData, setFormData] = useState({
@@ -17,6 +18,8 @@ function TrainerForm() {
     timings: "",
     train_to: [],
     photo: null,
+    password: "",
+    confirmPassword: "",
     // beginner: false,
     // Intermediate: false,
     // Advanced: false,
@@ -24,7 +27,7 @@ function TrainerForm() {
     // strength_training: false,
     // weight_loss: false,
   });
-
+  const navigate = useNavigate();
   const handleChange = (e) => {
     const { className, name, checked, value, type, files } = e.target;
     setFormData((prevState) => ({
@@ -60,6 +63,7 @@ function TrainerForm() {
         .then((res) => {
           if (res.data === "inserted") {
             alert("succesfully inserted");
+            navigate("/bussiness/login");
           } else if (res.data === "duplicate key") {
             alert("email or phone no already exists");
           } else {
@@ -87,7 +91,7 @@ function TrainerForm() {
               name="name"
               value={formData.name}
               onChange={handleChange}
-              placeholder="Enter center full name"
+              placeholder="Enter full name"
             />
           </div>
 
@@ -175,6 +179,36 @@ function TrainerForm() {
               value={formData.city}
               onChange={handleChange}
               placeholder="Enter the City"
+            />
+          </div>
+
+          <div className="row">
+            <div className="label-box">
+              <label htmlFor="Password">Password:</label>
+            </div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter the Password"
+            />
+          </div>
+
+          <div className="row">
+            <div className="label-box">
+              <label htmlFor="confirmPassword">
+                {/* Confirm <Password></Password>: */}Confirm Password:
+              </label>
+            </div>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Enter password again to confirm"
             />
           </div>
         </fieldset>

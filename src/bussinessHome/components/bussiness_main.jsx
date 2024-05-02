@@ -8,8 +8,15 @@ import Why from "./bussiness_why";
 import Buss_presence from "./bussiness_presence";
 import Buss_trainer from "./bussiness_trainer";
 import Buss_form from "./bussiness_form";
+import Buss_testi from "./bussiness_testi";
 import Buss_news from "./bussiness_news";
+import { useEffect } from "react";
+
 function BussinessMain() {
+  document.documentElement.style.scrollbarColor = "rgb(151, 203, 235) black";
+  useEffect(() => {
+    localStorage.removeItem("user_id");
+  });
   return (
     <div
       style={{
@@ -22,7 +29,7 @@ function BussinessMain() {
       <div
         style={{
           // backgroundColor: "red",
-          width: "85%",
+          width: "80%",
           display: "flex",
           alignItems: "center",
           flexDirection: "column",
@@ -33,10 +40,11 @@ function BussinessMain() {
         <Bussiness />
         <Buss_own />
         <Why />
-
-        <Buss_presence />
         <Buss_trainer />
-        <Buss_form />
+        <Buss_presence />
+
+        {/* <Buss_form /> */}
+        {/* <Buss_testi/> */}
         <Buss_news />
       </div>
     </div>

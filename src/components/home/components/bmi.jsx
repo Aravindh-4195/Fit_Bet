@@ -50,12 +50,14 @@ function BmiCalc() {
                       className="input-field w-50percent"
                       type="text"
                       placeholder="Weight / kg"
+                      id="weight"
                     ></input>
                     <input
                       onChange={(e) => setHeight(e.target.value)}
                       className="input-field w-50percent"
                       type="text"
                       placeholder="Height / cm"
+                      id="height"
                     ></input>
                   </form>
                   <div className="output-container mt-10">

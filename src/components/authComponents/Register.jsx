@@ -9,16 +9,13 @@ function Register() {
     name: "",
     email: "",
     phone: "",
-    gender: "",
     // timings: "",
     flat_no: "",
-    landmark: "",
     street: "",
     city: "",
-    navigate: "",
     password: "",
     confirmPassword: "",
-    photo: null,
+    // photo: null,
   });
 
   const handleChange = (e) => {
@@ -35,9 +32,7 @@ function Register() {
     if (formData.password === formData.confirmPassword) {
       try {
         await axios
-          .post("http://localhost:8000/gym/register", formData, {
-            headers: { "Content-Type": "multipart/form-data" },
-          })
+          .post("http://localhost:8000/register", formData)
           .then((res) => {
             // alert(res.data);
             if (res.data === "ok") {
@@ -108,20 +103,6 @@ function Register() {
 
           <div className="row">
             <div className="label-box">
-              <label htmlFor=" Upload Photo"> Upload Photo:</label>
-            </div>
-            <input
-              type="file"
-              accept="image/*"
-              name="photo"
-              id="photo"
-              // value={formData.photo}
-              onChange={handleChange}
-            />
-          </div>
-
-          <div className="row">
-            <div className="label-box">
               <label htmlFor="password">password: </label>
             </div>
             <input
@@ -147,23 +128,6 @@ function Register() {
               placeholder="Enter Confirm Password"
             />
           </div>
-
-          <div className="row">
-            <div className="label-box">
-              <label htmlFor="gender">gender:</label>
-            </div>
-            <select
-              id="gender"
-              name="gender"
-              value={formData.gender}
-              onChange={handleChange}
-            >
-              <option value="">Select gender</option>
-              <option value="male">male</option>
-              <option value="female">female</option>
-              <option value="other">other</option>
-            </select>
-          </div>
         </fieldset>
         <fieldset className="user_fieldset">
           <legend className="user_legend">Detailed Address</legend>
@@ -178,20 +142,6 @@ function Register() {
               value={formData.flat_no}
               onChange={handleChange}
               placeholder="Enter your flat_no"
-            />
-          </div>
-
-          <div className="row">
-            <div className="label-box">
-              <label htmlFor="landmark">Landmark:</label>
-            </div>
-            <input
-              type="text"
-              id="landmark"
-              name="landmark"
-              value={formData.landmark}
-              onChange={handleChange}
-              placeholder="near XYZ Building, ABC Road"
             />
           </div>
 
@@ -222,25 +172,9 @@ function Register() {
               placeholder="Enter the City name"
             />
           </div>
-
-          <div className="row">
-            <div className="label-box">
-              <label htmlFor="navigate">Location:</label>
-            </div>
-            <input
-              type="url"
-              id="navigate"
-              name="navigate"
-              value={formData.navigate}
-              onChange={handleChange}
-              placeholder="Google Map location link"
-            />
-          </div>
         </fieldset>
 
-        <button className="btn" type="submit">
-          Submit
-        </button>
+        <input className="btn" type="submit" name="submit" />
       </form>
     </div>
   );

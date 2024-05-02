@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+// const { default: feedBack } = require("./userDashboard/feedback");
 mongoose
   .connect("mongodb://localhost:27017/form")
   .then(() => {
@@ -65,6 +66,14 @@ const gymSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  confirmPassword: {
+    type: String,
+    required: true,
+  },
 });
 
 // user Details Schema
@@ -90,6 +99,9 @@ const registered = new mongoose.Schema({
   status: {
     type: Boolean,
     required: true,
+  },
+  reviewed: {
+    type: Boolean,
   },
 });
 
@@ -153,7 +165,7 @@ const trainerAccounts = new mongoose.Schema({
     unique: true,
   },
   phone: {
-    type: Number,
+    type: String,
     required: true,
     unique: true,
   },
@@ -197,6 +209,33 @@ const trainerAccounts = new mongoose.Schema({
     type: String,
     required: true,
   },
+  password: {
+    type: String,
+    required: true,
+  },
+  confirmPassword: {
+    type: String,
+    required: true,
+  },
+});
+
+const userFeedback = new mongoose.Schema({
+  user_id: {
+    type: Number,
+    required: true,
+  },
+  product_id: {
+    type: Number,
+    required: true,
+  },
+  rating: {
+    type: Number,
+    required: true,
+  },
+  detailed: {
+    type: String,
+    required: true,
+  },
 });
 const accounts = mongoose.model("accounts", schema);
 module.exports = { accounts };
@@ -218,4 +257,12 @@ const trainerDetails = mongoose.model("trainerDetails", trainerAccounts);
 // const trainerDetails = mongoose.model("trainerDetails", trainerAccounts);
 const register = mongoose.model("register", registered);
 
-module.exports = { userdetails, gymProfiles, trainerDetails, register };
+const productFeedback = mongoose.model("productFeedback", userFeedback);
+
+module.exports = {
+  userdetails,
+  gymProfiles,
+  trainerDetails,
+  register,
+  productFeedback,
+};

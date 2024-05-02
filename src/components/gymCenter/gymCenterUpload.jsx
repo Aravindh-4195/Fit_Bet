@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./styles/trainerProfile.css";
+import { useNavigate } from "react-router-dom";
+import "./styles/gymReg.css";
 import axios from "axios";
 
 function GymForm() {
@@ -14,15 +15,17 @@ function GymForm() {
     street: "",
     city: "",
     navigate: "",
-
+    password: "",
+    confirmPassword: "",
     photo: null,
     beginner: false,
     intermediate: false,
     advanced: false,
   });
-
+  const history = useNavigate();
   const handleChange = (e) => {
     const { name, value, type, checked, files } = e.target;
+
     setFormData((prevState) => ({
       ...prevState,
       [name]:
@@ -32,7 +35,7 @@ function GymForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+    // console.log(formData);
     try {
       await axios
         .post("http://localhost:8000/gym/registerGym", formData, {
@@ -41,6 +44,7 @@ function GymForm() {
         .then((res) => {
           if (res.data === "ok") {
             alert("succesfully inserted");
+            history("/bussiness/login");
           } else {
             alert("unable to insert");
           }
@@ -51,11 +55,11 @@ function GymForm() {
   };
 
   return (
-    <div className="trainer-registration">
+    <div className="gymRegistration">
       {/* <h2>Trainer Registration</h2> */}
       <form onSubmit={handleSubmit} id="registration-form">
-        <fieldset>
-          <legend>Personal Information</legend>
+        <fieldset className="gymFieldset">
+          <legend className="gymLegend">Personal Information</legend>
           <div className="row">
             <div className="label-box">
               <label htmlFor="centerName">Center Full Name:</label>
@@ -97,9 +101,37 @@ function GymForm() {
               placeholder="Enter your phone number"
             />
           </div>
+
+          <div className="row">
+            <div className="label-box">
+              <label htmlFor="password">Password:</label>
+            </div>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter Password"
+            />
+          </div>
+
+          <div className="row">
+            <div className="label-box">
+              <label htmlFor="confirmPassword">Confirm Password:</label>
+            </div>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Enter confirm password"
+            />
+          </div>
         </fieldset>
-        <fieldset>
-          <legend>Detailed Address</legend>
+        <fieldset className="gymFieldset">
+          <legend className="gymLegend">Detailed Address</legend>
           <div className="row">
             <div className="label-box">
               <label htmlFor="flat_no">Flat No:</label>
@@ -171,8 +203,8 @@ function GymForm() {
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend>About Gym</legend>
+        <fieldset className="gymFieldset">
+          <legend className="gymLegend">About Gym</legend>
 
           <div className="row">
             <div className="label-box">
@@ -222,7 +254,7 @@ function GymForm() {
           </div>
         </fieldset>
 
-        <button className="btn" type="submit">
+        <button className="gymBtn" type="submit">
           Submit
         </button>
       </form>

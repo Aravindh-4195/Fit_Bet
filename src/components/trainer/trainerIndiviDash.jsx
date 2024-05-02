@@ -7,22 +7,44 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import Dashboard from "../dasboard";
 
 function TrainerDash() {
-  const location = useLocation();
+  const Location = useLocation();
+  const city = Location.state?.city;
   const history = useNavigate();
-  const user_id = location.state?.user_id;
-  const [gyms, gymSet] = useState(null);
-  useEffect(() => {
-    getTrainers();
-  }, []);
 
-  const getTrainers = async () => {
-    if (user_id === undefined) {
-      console.log(user_id);
+  console.log(city);
+  const [user_id, setId] = useState(localStorage.getItem("user_id") || "");
+  // console.log(user_id);
+  const [gyms, gymSet] = useState(null);
+  const [citys, setCitys] = useState([]);
+  useEffect(() => {
+    if (user_id) {
+      handleOnLoad();
+      getTrainers();
+    } else {
+      alert("please log in");
       history("/login");
     }
+    // console.log(rating);
+  }, [city]);
+
+  const handleOnLoad = async () => {
     try {
-      const result = await axios.get(
-        "http://localhost:8000/trainer/getTrainers"
+      // console.log("hello");
+      const result = await axios.get("http://localhost:8000/trainer/search");
+      setCitys(result.data.data); // Assuming your server returns an array of city names
+      // console.log(result.data.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      // Handle error gracefully, e.g., show an error message to the user
+    }
+  };
+  const getTrainers = async () => {
+    try {
+      const result = await axios.post(
+        "http://localhost:8000/trainer/getTrainers",
+        {
+          city: city,
+        }
       );
       gymSet(result.data.data);
     } catch (e) {
@@ -32,7 +54,7 @@ function TrainerDash() {
 
   return (
     <div>
-      <Dashboard user_id={user_id} />
+      <Dashboard city={citys} />
       <div className="gym_cards">
         {gyms == null
           ? ""

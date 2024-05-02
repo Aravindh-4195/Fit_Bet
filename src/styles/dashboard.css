@@ -37,7 +37,7 @@
   height: 80%;
   background-color: black;
   color: red;
-  border-radius: 5px;
+  border-radius: 5px 5px 0 0;
 }
 #dashboardDrop {
   width: 100%;
@@ -65,4 +65,25 @@
 }
 .dashOptions:hover {
   background-color: rgba(251, 228, 17, 255);
+}
+.cityList {
+  position: absolute;
+  background-color: black;
+  z-index: 2;
+  color: black;
+  font-weight: bold;
+  padding: 1vw;
+  top: 9vh;
+  left: 14.75vw;
+  width: 28vw;
+  font-family: monospace;
+  font-size: 125%;
+  text-align: center;
+  /* border: 1px solid black; */
+  border-radius: 5px;
+}
+.city {
+  background-color: rgba(251, 228, 17, 255);
+  margin: 5px;
+  padding: 0.5vw;
 }

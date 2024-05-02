@@ -1,7 +1,7 @@
 select,
 input {
   background-color: rgba(44, 47, 50, 255);
-  color: grey;
+  color: white;
   font-family: monospace;
   font-weight: bold;
 }
@@ -9,8 +9,8 @@ input {
   font-family: monospace;
   /* max-width: 800px; */
   /* margin: 0 auto; */
-  color: gold;
-  background-color: black;
+  color: black;
+  /* background-color: black; */
   width: 88.9vw;
   padding: 5vw;
   display: flex;
@@ -32,7 +32,7 @@ input {
   padding: 20px;
   margin-bottom: 20px;
   width: 50vw;
-  color: gold;
+  color: black;
 }
 
 .user_legend {
@@ -40,7 +40,7 @@ input {
   font-weight: bold;
   margin-bottom: 30px;
   text-align: left;
-  color: gold;
+  color: black;
 }
 
 .row {
@@ -105,7 +105,8 @@ textarea {
 }
 
 .btn:hover {
-  background-color: #45a049;
+  background-color: black;
+  color: white;
 }
 
 #gender {

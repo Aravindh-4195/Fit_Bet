@@ -5,18 +5,21 @@ body {
   margin-top: 5%;
   display: flex;
   width: 100%;
-  height: 90vh;
+  height: 80vh;
   text-align: left;
 }
 .bussiness_header {
   margin-top: 20vh;
+  
 }
 .buss_h1 {
+  font-family:arial;
   font-size: 5rem;
   font-weight: bold;
   color: rgb(151, 203, 235);
 }
 .buss_h2 {
+  font-family:arial;
   margin-top: 30px;
   font-size: 4.5rem;
   font-weight: bold;

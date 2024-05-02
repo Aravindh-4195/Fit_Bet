@@ -25,7 +25,7 @@ const Footer = () => {
         <div className="footer-links">
           <div className="footerlinksdiv">
             <h4>Links</h4>
-            <a href="/bussiness">
+            <a href="/bussiness" id="patner">
               <div>
                 <p>patner with us</p>
               </div>
@@ -35,17 +35,6 @@ const Footer = () => {
                 <p>link2</p>
               </div>
             </a>
-            <a href="">
-              <div>
-                <p>link3</p>
-              </div>
-            </a>
-            <a href="">
-              {" "}
-              <div>
-                <p>link4</p>
-              </div>{" "}
-            </a>
           </div>
           <div className="footerlinksdiv">
             <h4>Links</h4>
@@ -59,17 +48,6 @@ const Footer = () => {
                 <p>link2</p>
               </div>
             </a>
-            <a href="">
-              <div>
-                <p>link3</p>
-              </div>
-            </a>
-            <a href="">
-              {" "}
-              <div>
-                <p>link4</p>
-              </div>{" "}
-            </a>
           </div>
           <div className="footerlinksdiv">
             <h4>Links</h4>
@@ -82,17 +60,6 @@ const Footer = () => {
               <div>
                 <p>link2</p>
               </div>
-            </a>
-            <a href="">
-              <div>
-                <p>link3</p>
-              </div>
-            </a>
-            <a href="">
-              {" "}
-              <div>
-                <p>link4</p>
-              </div>{" "}
             </a>
           </div>
 
@@ -107,17 +74,6 @@ const Footer = () => {
               <div>
                 <p>link2</p>
               </div>
-            </a>
-            <a href="">
-              <div>
-                <p>link3</p>
-              </div>
-            </a>
-            <a href="">
-              {" "}
-              <div>
-                <p>link4</p>
-              </div>{" "}
             </a>
           </div>
 

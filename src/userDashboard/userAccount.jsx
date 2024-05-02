@@ -23,19 +23,24 @@ function UserAccount() {
   const [id, setId] = useState(localStorage.getItem("user_id") || "");
   const history = useNavigate();
   const location = useLocation();
-  const user_id = location.state?.user_id;
+  // const user_id = location.state?.user_id;
   // console.log(user_id);
-  const user = { phone: Number(user_id), output: true };
+  const user = { phone: Number(id), output: true };
   useEffect(() => {
-    localStorage.setItem("user_id", id);
-    console.log("localStorage", localStorage.getItem("user_id"));
-    handleOnload();
+    // localStorage.setItem("user_id", id);
+    // console.log("localStorage", localStorage.getItem("user_id"));
+    if (id) {
+      handleOnload();
+    } else {
+      alert("session expires please login");
+      history("/login");
+    }
   }, []);
 
   const handleOnload = async () => {
-    console.log("user", user_id);
-    setId(user_id);
-    if (user_id === undefined) {
+    console.log("user", id);
+    setId(id);
+    if (id === undefined) {
       history("/login");
     }
     try {
@@ -58,7 +63,7 @@ function UserAccount() {
   };
 
   const handleSubmit = async (e) => {
-    const data_insert = { formData, phone: Number(user_id), output: false };
+    const data_insert = { formData, phone: Number(id), output: false };
     console.log(data_insert);
     e.preventDefault();
     if (formData.password === formData.confirmPassword) {

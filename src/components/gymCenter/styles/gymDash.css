@@ -88,10 +88,8 @@ img {
   /* border: 5px solid rgba(255, 255, 0, 0.696); */
 }
 
-#dash_gym_details {
+.dash_gym_details {
   text-align: left;
-}
-#dash_gym_details i {
   margin: 10px;
 }
 .gym_card {

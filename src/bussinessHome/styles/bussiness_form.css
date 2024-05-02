@@ -1,9 +1,10 @@
 /* PartnerForm.css */
 #buss_form{
   height:130vh;
+  width:94%;
 }
 .form_container {
-    width: 96.5%;
+    
     background-color:rgb(151, 203, 235);
     padding: 20px;
     border-radius: 8px;
@@ -17,11 +18,13 @@
     align-items: center;
   }
   .form_h1 {
+    font-family:arial;
     font-size: 3rem;
     color: black;
   }
   
   .form_p {
+    font-family:arial;
     font-size: 1.5rem;
     color: black;
   }
@@ -32,6 +35,7 @@
   }
   
   .form_label {
+    font-family:arial;
     display: block;
     margin-bottom: 5px;
     color:black;
@@ -42,6 +46,7 @@
   input[type="tel"],
   select,
   textarea {
+    font-family:arial;
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -52,6 +57,7 @@
   }
   
   textarea {
+    font-family:arial;
     resize: vertical;
   }
   
